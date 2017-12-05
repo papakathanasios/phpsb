@@ -6,33 +6,14 @@
 		<link rel="stylesheet" type="text/css" href="main.css" />
 	</head>
     <body>
-        <h1>NBG API Test Call</h1>
-       <?php
-
-$curl = curl_init();
-
-curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://nbgnodeapi.cloudapp.net/api/banks",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => "",
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 30,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "GET",
-  CURLOPT_HTTPHEADER => array(
-    "accept: text/json",
-  ),
-));
-
-$response = curl_exec($curl);
-$err = curl_error($curl);
-
-curl_close($curl);
-
-if ($err) {
-  echo "cURL Error #:" . $err;
-} else {
-  echo $response;
-}; ?>
+        <h1>NBG PHP Test Calls</h1>
+        <h2 style="font-size: 14px;">
+            Before you run the calls you need to change the parameters named REPLACE_THIS_VALUE or REPLACE_SANDBOX_ID in the .php files
+        </h2>
+        <ol style="font-size: 14px;">
+            <li><a href="/createsandbox.php" target="_blank">Create Sandbox Call</a></li>
+            <li><a href="/getbanks.php" target="_blank">Get Banks call</a></li>
+            <li><a href="/deletesandbox.php" target="_blank">Delete Sandbox call</a></li>
+        </ol>
 	</body>
 </html>
